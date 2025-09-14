@@ -32,10 +32,15 @@ public class DemoConnection {
         Statement st=con.createStatement();
        ResultSet rs= st.executeQuery(query);
         System.out.println("Query Executed Successfully: ");
-        System.out.println(rs.next());
-        rs.next();
-        String name=rs.getString("name");
-        System.out.println(name);
+//        System.out.println(rs.next());
+//        rs.next();
+//        String name=rs.getString("name");
+//        System.out.println(name);
+        while(rs.next())
+        {
+            System.out.print(rs.getString(1)+" ");
+            System.out.println(rs.getString(2)+" ");
+        }
         con.close();
         System.out.println("Connection closed Successfully");
     }
